@@ -1,0 +1,148 @@
+:root {
+    --dark-magenta: hsl(300, 43%, 22%);
+    --soft-pink: hsl(333, 80%, 67%);
+    --dark-grayish-magenta: hsl(303, 10%, 53%);
+    --light-grayish-magenta: hsl(300, 24%, 96%);
+    --white: hsl(0, 0%, 100%)
+}
+
+html, body {
+  overflow: auto;
+}
+
+body {
+  font-family: 'Spartan', sans-serif;
+  margin: 0;
+  height: 100vh;
+  font-size: 15px;
+  padding: 3em 6em;
+  box-sizing: border-box;
+  display: table-cell;
+  vertical-align: middle;
+  background: url('../images/bg-pattern-bottom-desktop.svg') no-repeat;
+  background-size: cover;
+  width: 100vw;
+}
+
+h2, p {
+  margin: 0;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  grid-template-areas:
+  "header rated"
+  "review review";
+  margin: 30px auto;
+  width: 1200px;
+}
+
+@media screen and (max-width: 375px) {
+  main {
+    display: flex;
+  }
+}
+
+.top_left_main_message > h2 {
+  color: var(--dark-magenta);
+  font-size: 4em;
+  line-height: 100%;
+  margin-bottom: 0.5em;
+  grid-area: header;
+}
+  
+.top_right_side_at_star {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  position: relative;
+  height: 150px;
+  margin: auto 0;
+  grid-area: rated;
+}
+
+.top {
+  position: absolute;
+  top: 0;
+}
+  
+.right {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.center {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: 0;
+  top: 0;
+}
+
+.rated {
+  background-color: var(--light-grayish-magenta);
+  border-radius: 5px;
+  width: 350px;
+  height: 40px;
+  padding: 10px;
+  box-sizing: border-box;
+  color: var(--dark-magenta);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.down_profiles {
+  grid-area: review;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5em;
+  position: relative;
+  height: 240px;
+}
+
+.review {
+  background-color: var(--dark-magenta);
+  height: 200px;
+  width: 340px;
+  border-radius: 5px;
+  padding: 25px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  position: absolute;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+}
+  
+.profile > img {
+  margin-right: 20px;
+}
+  
+.picture {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+.name {
+  font-weight: bolder;
+}
+  
+.verified {
+    color: var(--soft-pink);
+}
+  
+.comment {
+    font-weight: lighter;
+    font-size: small;
+}
